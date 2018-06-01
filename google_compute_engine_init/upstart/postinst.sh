@@ -16,6 +16,7 @@
 # Stop existing daemons
 stop --no-wait google-accounts-daemon
 stop --no-wait google-clock-skew-daemon
+stop --no-wait google-diagnostics-daemon
 stop --no-wait google-network-daemon
 
 # Run instance setup manually to prevent startup script execution.
@@ -24,4 +25,5 @@ stop --no-wait google-network-daemon
 # Start daemons
 start --no-wait google-accounts-daemon
 start --no-wait google-clock-skew-daemon
+start --no-wait google-diagnostics-daemon
 start --no-wait google-network-daemon

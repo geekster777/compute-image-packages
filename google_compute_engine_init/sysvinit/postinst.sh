@@ -15,6 +15,7 @@
 
 update-rc.d google-accounts-daemon defaults
 update-rc.d google-clock-skew-daemon defaults
+update-rc.d google-diagnostics-daemon defaults
 update-rc.d google-instance-setup defaults
 update-rc.d google-network-daemon defaults
 update-rc.d google-shutdown-scripts defaults

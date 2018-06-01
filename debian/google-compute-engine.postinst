@@ -29,5 +29,6 @@ if [ -d /run/systemd/system ]; then
     google-instance-setup.service \
     google-accounts-daemon.service \
     google-clock-skew-daemon.service \
+    google-diagnostics-daemon.service \
     google-network-daemon.service >/dev/null || true
 fi

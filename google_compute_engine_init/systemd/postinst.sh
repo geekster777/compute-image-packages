@@ -16,11 +16,13 @@
 # Stop existing daemons.
 systemctl stop --no-block google-accounts-daemon
 systemctl stop --no-block google-clock-skew-daemon
+systemctl stop --no-block google-diagnostics-daemon
 systemctl stop --no-block google-network-daemon
 
 # Enable systemd services.
 systemctl enable google-accounts-daemon.service
 systemctl enable google-clock-skew-daemon.service
+systemctl enable google-diagnostics-daemon.service
 systemctl enable google-instance-setup.service
 systemctl enable google-network-daemon.service
 systemctl enable google-shutdown-scripts.service
@@ -33,3 +35,4 @@ systemctl enable google-startup-scripts.service
 systemctl start --no-block google-network-daemon
 systemctl start --no-block google-accounts-daemon
 systemctl start --no-block google-clock-skew-daemon
+systemctl start --no-block google-diagnostics-daemon

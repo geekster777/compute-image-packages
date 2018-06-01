@@ -114,10 +114,12 @@ cp google_config/dhcp/google_hostname.sh %{buildroot}/etc/dhcp/dhclient.d/google
 if [ $1 -eq 2 ]; then
   stop -q -n google-accounts-daemon
   stop -q -n google-clock-skew-daemon
+  stop -q -n google-diagnostics-daemon
   stop -q -n google-network-daemon
   /usr/bin/google_instance_setup
   start -q -n google-accounts-daemon
   start -q -n google-clock-skew-daemon
+  start -q -n google-diagnostics-daemon
   start -q -n google-network-daemon
 fi
 
@@ -157,6 +159,7 @@ fi
 %if 0%{?el7}
 %systemd_post google-accounts-daemon.service
 %systemd_post google-clock-skew-daemon.service
+%systemd_post google-diagnostics-daemon.service
 %systemd_post google-instance-setup.service
 %systemd_post google-network-daemon.service
 %systemd_post google-shutdown-scripts.service
@@ -166,6 +169,7 @@ if [ $1 -eq 2 ]; then
   /usr/bin/google_instance_setup
   systemctl reload-or-restart google-accounts-daemon.service
   systemctl reload-or-restart google-clock-skew-daemon.service
+  systemctl reload-or-restart google-diagnostics-daemon.service
   systemctl reload-or-restart google-network-daemon.service
 fi
 %endif
@@ -177,6 +181,7 @@ if [ $1 -eq 0 ]; then
 %if 0%{?el6}
   stop -q -n google-accounts-daemon
   stop -q -n google-clock-skew-daemon
+  stop -q -n google-diagnostics-daemon
   stop -q -n google-network-daemon
   if initctl status google-ip-forwarding-daemon | grep -q 'running'; then
     stop -q -n google-ip-forwarding-daemon
@@ -185,6 +190,7 @@ if [ $1 -eq 0 ]; then
 %if 0%{?el7}
   %systemd_preun google-accounts-daemon.service
   %systemd_preun google-clock-skew-daemon.service
+  %systemd_preun google-diagnostics-daemon.service
   %systemd_preun google-instance-setup.service
   %systemd_preun google-network-daemon.service
   %systemd_preun google-shutdown-scripts.service

@@ -16,6 +16,7 @@
 if [ "$1" = purge ]; then
   update-rc.d google-accounts-daemon remove
   update-rc.d google-clock-skew-daemon remove
+  update-rc.d google-diagnostics-daemon remove
   update-rc.d google-instance-setup remove
   update-rc.d google-network-daemon remove
   update-rc.d google-ip-forwarding-daemon remove

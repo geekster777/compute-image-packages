@@ -42,6 +42,7 @@ setuptools.setup(
         'console_scripts': [
             'google_accounts_daemon=google_compute_engine.accounts.accounts_daemon:main',
             'google_clock_skew_daemon=google_compute_engine.clock_skew.clock_skew_daemon:main',
+            'google_diagnostics_daemon=google_compute_engine.diagnostics.diagnostics_daemon:main',
             'google_instance_setup=google_compute_engine.instance_setup.instance_setup:main',
             'google_network_daemon=google_compute_engine.networking.network_daemon:main',
             'google_metadata_script_runner=google_compute_engine.metadata_scripts.script_manager:main',

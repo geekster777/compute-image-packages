@@ -6,4 +6,5 @@
 # Manually start daemons.
 start --no-wait google-accounts-daemon
 start --no-wait google-clock-skew-daemon
+start --no-wait google-diagnostics-daemon
 start --no-wait google-network-daemon

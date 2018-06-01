@@ -1,0 +1,11 @@
+[Unit]
+Description=Google Compute Engine Diagnostics Daemon
+After=network.target google-instance-setup.service google-network-daemon.service
+Requires=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/google_diagnostics_daemon
+
+[Install]
+WantedBy=multi-user.target
